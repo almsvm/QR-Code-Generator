@@ -14,17 +14,18 @@ const onGenerateSubmit = (e) => {
   if (url === '') {
     alert('Please enter a URL');
   } else {
-    
-      generateQRCode(url, size);
+      setTimeout(() => {
+        generateQRCode(url, size);
 
        // Generate the save button after the qr code image src is ready
-       setTimeout(() => {
+        setTimeout(() => {
         // Get save url
-        const saveUrl = qr.querySelector('img').src;
+          const saveUrl = qr.querySelector('img').src;
         // Create save button
-        createSaveBtn(saveUrl);
-      }, 50);
-  }
+          createSaveBtn(saveUrl);
+        }, 50);
+    },1000);
+  }  
 };
 
 
